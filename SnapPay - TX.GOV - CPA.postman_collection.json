@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "e2153e2a-f8cb-4ead-851e-eef99055e83f",
+		"name": "SnapPay - TX.GOV - CPA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30601026"
+	},
+	"item": [
+		{
+			"name": "1. GetRequestID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "AccountId",
+						"value": "{{accountId}}"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}"
+					},
+					{
+						"key": "merchantid",
+						"value": "{{merchantId}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountid\": \"{{accountId}}\",\r\n    \"companycode\": \"{{companycode}}\",\r\n    \"currencycode\": \"USD\",\r\n    \"customerid\": \"1000990\",\r\n    \"userid\": \"eCommUser\",\r\n    \"savepaymentmethod\": \"N\",\r\n    \"saveatcustomer\": \"N\",\r\n    \"displaycardssavedatcustomer\": \"N\",\r\n    \"redirecturl\": \"{{redirectURL}}\",\r\n    \"cancelredirecturl\": \"{{cancelRedirectURL}}\",\r\n    \"type\": \"C\",\r\n    \"transactionType\": \"A\",\r\n    \"transactionamount\": 25010.12,\r\n    \"paymentmethod\": \"CC\",\r\n    \"cof\": \"C\",\r\n    \"cofscheduled\": \"N\",\r\n    \"ecomind\": \"E\",\r\n    \"customer\": {\r\n        \"customername\": \"Stephen Morrow\",\r\n        \"addressline1\": \"Cedar\",\r\n        \"addressline2\": \"\",\r\n        \"city\": \"Cedar Park\",\r\n        \"state\": \"TX\",\r\n        \"zipcode\": \"78613\",\r\n        \"country\": \"US\",\r\n        \"phone\": \"512-123-4567\",\r\n        \"email\": \"steve.morrow@tdlr.texas.gov\"\r\n    },\r\n    \"clxstream\": [\r\n        {\r\n            \"transaction\": {\r\n                \"merchantid\": \"{{merchantId}}\",\r\n                \"localreferenceid\": \"902AA0003923376\",\r\n                \"type\": \"CC\",\r\n                \"description\": \"Sales and Use Tax   \",\r\n                \"unitprice\": 1.0,\r\n                \"quantity\": 1,\r\n                \"sku\": \"null\",\r\n                \"company\": \"00000\",\r\n                \"fee\": 0,\r\n                \"department\": \"null\",\r\n                \"vendorid\": \"\",\r\n                \"customerid\": \"39000211100\",\r\n                \"agency\": \"\",\r\n                \"batchid\": \"\",\r\n                \"reportlines\": \"6\",\r\n                \"reportlinedetails\": [\r\n                    {\r\n                        \"id\": \"USAS1\",\r\n                        \"attributes\": [\r\n                            {\r\n                                \"name\": \"USAS1FUND\",\r\n                                \"value\": \"0001\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS1PCA\",\r\n                                \"value\": \"60010\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS1CO\",\r\n                                \"value\": \"3102\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS1AO\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS1AMOUNT\",\r\n                                \"value\": \"99.97\",\r\n                                \"type\": \"DOLLAR\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS1DEPAGENCY\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS1TCODE\",\r\n                                \"value\": \"195\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS1INDEX\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS1OTHER\",\r\n                                \"value\": \"TCODE*26020|TID*39000211100|FPER*2205|ATYPE*002\",\r\n                                \"type\": \"String\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"id\": \"USAS2\",\r\n                        \"attributes\": [\r\n                            {\r\n                                \"name\": \"USAS2FUND\",\r\n                                \"value\": \"0882\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS2PCA\",\r\n                                \"value\": \"55010\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS2CO\",\r\n                                \"value\": \"3790\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS2AO\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS2AMOUNT\",\r\n                                \"value\": \"0.04\",\r\n                                \"type\": \"DOLLAR\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS2DEPAGENCY\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS2TCODE\",\r\n                                \"value\": \"188\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS2INDEX\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS2OTHER\",\r\n                                \"value\": \"TCODE*26020|TID*39000211100|FPER*2205|ATYPE*004\",\r\n                                \"type\": \"String\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"id\": \"USAS3\",\r\n                        \"attributes\": [\r\n                            {\r\n                                \"name\": \"USAS3FUND\",\r\n                                \"value\": \"0001\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS3PCA\",\r\n                                \"value\": \"97768\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS3CO\",\r\n                                \"value\": \"3879\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS3AO\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS3AMOUNT\",\r\n                                \"value\": \"2.25\",\r\n                                \"type\": \"DOLLAR\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS3DEPAGENCY\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS3TCODE\",\r\n                                \"value\": \"195\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS3INDEX\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS3OTHER\",\r\n                                \"value\": \"TCODE*90100|TID*39000211100|FPER*2205|ATYPE*327\",\r\n                                \"type\": \"String\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"id\": \"USAS4\",\r\n                        \"attributes\": [\r\n                            {\r\n                                \"name\": \"USAS4FUND\",\r\n                                \"value\": \"0001\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS4PCA\",\r\n                                \"value\": \"04512\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS4CO\",\r\n                                \"value\": \"3879\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS4AO\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS4AMOUNT\",\r\n                                \"value\": \"0.25\",\r\n                                \"type\": \"DOLLAR\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS4DEPAGENCY\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS4TCODE\",\r\n                                \"value\": \"195\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS4INDEX\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS4OTHER\",\r\n                                \"value\": \"TCODE*90100|TID*39000211100|FPER*2205|ATYPE*328\",\r\n                                \"type\": \"String\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"id\": \"USAS5\",\r\n                        \"attributes\": [\r\n                            {\r\n                                \"name\": \"USAS5FUND\",\r\n                                \"value\": \"0001\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS5PCA\",\r\n                                \"value\": \"97768\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS5CO\",\r\n                                \"value\": \"7219\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS5AO\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS5AMOUNT\",\r\n                                \"value\": \"2.25\",\r\n                                \"type\": \"DOLLAR\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS5DEPAGENCY\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS5TCODE\",\r\n                                \"value\": \"265\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS5INDEX\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS5OTHER\",\r\n                                \"value\": \"TCODE*     |TID*39000211100|FPER*2205|ATYPE*\",\r\n                                \"type\": \"String\"\r\n                            }\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"id\": \"USAS6\",\r\n                        \"attributes\": [\r\n                            {\r\n                                \"name\": \"USAS6FUND\",\r\n                                \"value\": \"0001\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS6PCA\",\r\n                                \"value\": \"04512\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS6CO\",\r\n                                \"value\": \"7219\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS6AO\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS6AMOUNT\",\r\n                                \"value\": \"0.25\",\r\n                                \"type\": \"DOLLAR\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS6DEPAGENCY\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS6TCODE\",\r\n                                \"value\": \"265\",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS6INDEX\",\r\n                                \"value\": \" \",\r\n                                \"type\": \"String\"\r\n                            },\r\n                            {\r\n                                \"name\": \"USAS6OTHER\",\r\n                                \"value\": \"TCODE*     |TID*39000211100|FPER*2205|ATYPE*\",\r\n                                \"type\": \"String\"\r\n                            }\r\n                        ]\r\n                    }\r\n                ],\r\n                \"additionalinfo\": []\r\n            },\r\n            \"feetransaction\": \"\"\r\n        }\r\n    ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/interop/v2/GetRequestID",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"interop",
+						"v2",
+						"GetRequestID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. GetPaymentDetails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"requestid\",jsonData.requestid);",
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accountid",
+						"value": "{{accountId}}",
+						"type": "text"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountid\": \"{{accountId}}\",\n    \"token\": \"{{requestid}}\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Interop/GetPaymentDetails",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Interop",
+						"GetPaymentDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Authorize with Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"requestid\",jsonData.requestid);",
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accountid",
+						"value": "{{accountId}}"
+					},
+					{
+						"key": "merchantid",
+						"value": "{{merchantId}}"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountid\": \"{{accountId}}\",\n    \"companycode\": \"{{companycode}}\",\n    \"currency\": \"USD\",\n    \"customerid\": \"1000999\",\n    \"branchplant\": \"\",\n    \"ordertype\": \"ORD\",\n    \"orderid\": \"100000405\",\n    \"userid\": \"eCommUser\",\n    \"reference\": \"Authorization with a token\",\n    \"purchaseorder\": \"PO#1234\",\n    \"cof\": \"C\",\n    \"cofscheduled\": \"N\",\n    \"ecomind\": \"E\",\n    \"iscardpresent\": \"N\",\n    \"iscapture\": \"N\",\n    \"cards\": [\n        {\n            \"transactionamount\": \"215.00\",\n            \"tokenid\": \"{{tokenid}}\",\n            \"expirationdate\": \"012030\",\n            \"type\": \"MC\",\n            \"last4\": \"5454\",\n            \"customername\": \"Alexander Perez\",\n            \"addressline1\": \"123 Main St\",\n            \"addressline2\": \"\",\n            \"city\": \"Houston\",\n            \"state\": \"TX\",\n            \"zipcode\": \"77070\",\n            \"country\": \"US\",\n            \"phone\": \"713-895-9999\",\n            \"email\": \"aperez@payteros.com\"\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/Interop/authorize",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"Interop",
+						"authorize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. GetTransaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accountid",
+						"value": "{{accountId}}",
+						"description": "(Required) Account ID"
+					},
+					{
+						"key": "merchantid",
+						"value": "{{merchantId}}",
+						"type": "text"
+					},
+					{
+						"key": "signature",
+						"value": "{{signature}}",
+						"description": "(Required) HMAC Signature"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"accountid\": \"{{accountId}}\",\n  \"transactionid\": \"{{pgtransactionid}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/interop/GetTransaction",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"interop",
+						"GetTransaction"
+					]
+				},
+				"description": "The GetTransaction API allows to inquire on a previous transaction. This API allows to inquire on a previous transaction based on transaction ID, order ID, reference or purchase order. The response contains a list of transactions as more than one transaction can have same order ID, reference or purchase order."
+			},
+			"response": []
+		},
+		{
+			"name": "5. Send Payment Link",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accountid",
+						"value": "{{accountId}}",
+						"description": "(Required) Account ID"
+					},
+					{
+						"key": "Signature",
+						"value": "{{signature}}",
+						"type": "text"
+					},
+					{
+						"key": "merchantid",
+						"value": "{{merchantId}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountid\": \"{{accountId}}\",\n    \"companycode\": \"{{companycode}}\",\n    \"currencycode\": \"USD\",\n    \"customerid\": \"1000990\",\n    \"userid\": \"eCommUser\",\n    \"branchplant\": \"\",\n    \"transactiontype\": \"A\",\n    \"transactionamount\": 4.12,\n    \"mode\": \"CC\",\n    \"orderid\": \"SF-Ord-001\",\n    \"ordertype\": \"SO\",\n    \"orderdate\": \"2024-07-18\",\n    \"requesteddate\": \"2024-07-18\",\n    \"purchaseorder\": \"PO-240418-08\",\n    \"invoiceid\": \"SF-Inv-001\",\n    \"cvvrequired\": \"Y\",\n    \"sendemailreceipts\": \"Y\",\n    \"enableprintreceipt\": \"N\",\n    \"saveatcustomer\": \"Y\",\n    \"language\": \"en-US\",\n    \"email\": \"aperez@payteros.com\",\n    \"openamount\": \"Y\",\n    \"forceusertoenteraddress\": \"Y\",\n    \"redirecturl\": \"{{redirectURL}}?SFID=1234\",\n    \"userfields\": [\n        {\n            \"udf0\": \"udf0\",\n            \"udf1\": \"udf1\",\n            \"udf2\": \"udf2\",\n            \"udf3\": \"udf3\",\n            \"udf4\": \"udf4\",\n            \"udf5\": \"udf5\",\n            \"udf6\": \"udf6\",\n            \"udf7\": \"udf7\",\n            \"udf8\": \"udf8\",\n            \"udf9\": \"udf9\"\n        }\n    ],\n    \"customer\": {\n        \"customername\": \"Alexander Perez\",\n        \"addressline\": \"123 Main St\",\n        \"city\": \"Houston\",\n        \"state\": \"TX\",\n        \"zipcode\": \"77070\",\n        \"country\": \"US\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/interop/sendpaymentlink",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"interop",
+						"sendpaymentlink"
+					]
+				},
+				"description": "Create link for payment"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{APIBasicAuthPwd}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{APIBasicAuthUserId}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"var CryptoJS = require('crypto-js');",
+					"var uuid = require('uuid');",
+					"var moment = require(\"moment\")",
+					"",
+					"function replaceVariables(text)",
+					"{",
+					"    var regex = /\\{\\{([^{}]*)\\}\\}/g;",
+					"    var match = regex.exec(text);",
+					"    var replace = null;",
+					"",
+					"    if (match !== null)",
+					"    {",
+					"        replace = pm.collectionVariables.get(match[1]);",
+					"        text = text.toString().replace(\"{{\" + match[1] + \"}}\", replace);",
+					"        return replaceVariables(text);",
+					"    }",
+					"",
+					"    return text;",
+					"}",
+					"",
+					"function computeMD5()",
+					"{",
+					"    var hasBody = (pm.request.body == null);",
+					"    var requestContentBase64String = \"\";",
+					"",
+					"    if (pm.request.method == \"POST\")",
+					"    {",
+					"        var payload = replaceVariables(pm.request.body.toString());",
+					"        if(pm.collectionVariables.get(\"UseMD5ForHMAC\") == \"Y\")",
+					"        {",
+					"            var md5 = CryptoJS.MD5(payload);",
+					"            requestContentBase64String = CryptoJS.enc.Base64.stringify(md5);",
+					"        }",
+					"        else",
+					"        {",
+					"            requestContentBase64String = payload;",
+					"        }",
+					"    }",
+					"",
+					"    return requestContentBase64String;",
+					"}",
+					"",
+					"function computeSignature()",
+					"{",
+					"    var requestURI = replaceVariables(pm.request.url);",
+					"    var requestMethod = pm.request.method;",
+					"    var requestTimeStamp = moment(new Date().toUTCString()).valueOf() / 1000;",
+					"    var nonce = uuid.v4();",
+					"    var accountId = pm.collectionVariables.get(\"accountId\");",
+					"    var requestContentBase64String = computeMD5();",
+					"    var signatureRawData  = accountId + requestMethod + requestURI + requestTimeStamp +  nonce + requestContentBase64String;",
+					"    var secretKeyByteArray = CryptoJS.enc.Base64.parse(pm.collectionVariables.get(\"APIAuthenticationCode\"));",
+					"    var signature = CryptoJS.enc.Utf8.parse(signatureRawData);",
+					"    var signatureBytes = CryptoJS.HmacSHA256(signature, secretKeyByteArray);",
+					"    var requestSignatureBase64String = CryptoJS.enc.Base64.stringify(signatureBytes);",
+					"    var HmacRaw = accountId + \":\" + requestSignatureBase64String + \":\" + nonce + \":\" + requestTimeStamp;",
+					"    var HmacValue = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(HmacRaw));",
+					"",
+					"    //console.log(\"requestURI - \" + requestURI);",
+					"    //console.log(\"requestMethod - \" + requestMethod);",
+					"    //console.log(\"requestTimeStamp - \" + requestTimeStamp);",
+					"    //console.log(\"nonce - \" + nonce);",
+					"    //console.log(\"accountId - \" + accountId);",
+					"    //console.log(\"requestContentBase64String - \" + requestContentBase64String);",
+					"    //console.log(\"signatureRawData - \" + signatureRawData);",
+					"    //console.log(\"secretKeyByteArray - \" + secretKeyByteArray);",
+					"    //console.log(\"signature - \" + signature);",
+					"    //console.log(\"signatureBytes - \" + signatureBytes);",
+					"    //console.log(\"requestSignatureBase64String - \" + requestSignatureBase64String);",
+					"    //console.log(\"HmacRaw - \" + HmacRaw);",
+					"",
+					"    return \"Hmac \" + HmacValue;",
+					"}",
+					"",
+					"var sig = computeSignature();",
+					"//console.log(\"Signature - \" + sig);",
+					"pm.collectionVariables.set('signature', sig);",
+					"//postman.setEnvironmentVariable('signature', sig);",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"var jsonData = JSON.parse(responseBody);",
+					"",
+					"",
+					"if(jsonData.hasOwnProperty(\"requestid\"))",
+					"{",
+					"    pm.collectionVariables.set(\"requestid\", jsonData.requestid);",
+					"}",
+					"",
+					"if(jsonData.hasOwnProperty(\"transaction\"))",
+					"{",
+					"    pm.collectionVariables.set(\"pgtransactionid\", jsonData.transaction.pgtransactionid);",
+					"}",
+					"",
+					"if(jsonData.hasOwnProperty(\"paymentmethod\"))",
+					"{",
+					"    pm.collectionVariables.set(\"tokenid\", jsonData.paymentmethod.tokenid);",
+					"}",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://snappaydirectapi-cert.fiserv.com",
+			"type": "string"
+		},
+		{
+			"key": "APIBasicAuthUserId",
+			"value": "2000217784"
+		},
+		{
+			"key": "APIBasicAuthPwd",
+			"value": "Q5vT+jufEnc7(hH="
+		},
+		{
+			"key": "APIAuthenticationCode",
+			"value": "Rxg9+OAvx/+9rjSQnk6a5rEc0YIyQX9AYC14yhaFA80=",
+			"type": "string"
+		},
+		{
+			"key": "UseMD5ForHMAC",
+			"value": "N",
+			"type": "string"
+		},
+		{
+			"key": "accountId",
+			"value": "2000217784",
+			"type": "string"
+		},
+		{
+			"key": "merchantId",
+			"value": "202409300003",
+			"type": "string"
+		},
+		{
+			"key": "companycode",
+			"value": "00000",
+			"type": "string"
+		},
+		{
+			"key": "signature",
+			"value": "Hmac ",
+			"type": "string"
+		},
+		{
+			"key": "requestid",
+			"value": "d0455e3a-fb9d-4e88-a324-18fa8ebf6ca9",
+			"type": "string"
+		},
+		{
+			"key": "pgtransactionid",
+			"value": "306862355597",
+			"type": "string"
+		},
+		{
+			"key": "tokenid",
+			"value": "9418365146451111",
+			"type": "string"
+		},
+		{
+			"key": "redirectURL",
+			"value": "https://example.com/checkout/confirm",
+			"type": "string"
+		},
+		{
+			"key": "cancelRedirectURL",
+			"value": "https://example.com/checkout/cancel",
+			"type": "string"
+		}
+	]
+}
